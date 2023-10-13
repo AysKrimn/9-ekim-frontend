@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <!-- CSS -->
+    <style>
+        /* INTERNAL CSS  */
+        /* BURASI CSS ALANI */
+
+        /* classları yakalamak için . kullanırız */
+        .kirmizi {
+
+            background-color: red;
+        }
+
+
+        .mor {
+
+            background-color: purple;
+        }
+
+        .mor * {
+
+            color: white;
+        }
+        /* CSS ALANI BURADA BİTER */
+
+
+        .mavi span {
+
+            color: purple;
+        }
+
+        
+       .kahverengi span {
+
+            color: gray;
+        }
+
+
+        .gri {
+
+            color: gray;
+        }
+
+        #gri {
+
+            color: blueviolet;
+        }
+
+
+
+        .yanyana p {
+
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- class isimleri aynı olabilir, elementler ile paylaşılabilir -->
+    <!-- idler ise mutlaka benzersiz olmalı ve bireysel olmalıdır. -->
+    <p id="gri">Sadece bende geçerlis olsun</p>
+
+    <p class="gri">Lorem, ipsum.</p>
+    <!-- site yapıları bu divin icersinde olur -->
+    <div class="kirmizi">
+
+        <p>Merhaba css</p>
+
+        <div class="mor">
+            <p>ben 2. divin icersindeyim.</p>
+
+            <span>Bende bir span</span>
+            
+            <b>BOLD</b>
+            
+            <i>italik</i>
+
+            <a href="#">LİNK</a>
+
+
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <div class="kirmizi">
+
+        <p>Lorem, ipsum dolor.</p>
+    </div>
+
+    <hr>
+
+
+    <div class="mavi">
+
+        <p>Ben mavi </p>
+
+        <span>beni mor yap</span>
+
+        <div class="kahverengi">
+            <p>bende kahve</p>
+
+            <span>Beni gri yap desin</span>
+        </div>
+   
+    </div>
+
+
+    <div class="yanyana">
+        <h1>Dispaly</h1>
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore unde asperiores enim?</p>
+    </div>
+</body>
+
+
+</html>
