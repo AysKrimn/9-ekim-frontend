@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .card-container {
+
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+
+        .box {
+
+            width: 40%;
+            margin: auto;
+            border: 2px solid #c1c1c1;
+        }
+
+        .image-container img {
+            width: 100%;
+            opacity: 0.5;
+            /* TÜM HERŞEY İCİN 5 SANİYEDE GECİS YAP */
+            /* transition-property: all */
+            transition: 0.5s ease-in-out;
+        }
+
+        .image-container img:hover {
+
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .text-container {
+
+            padding: 1rem;
+        }
+
+
+        .button-container button {
+
+            width: 100%;
+            padding: 8px;
+        }
+
+
+
+
+        .yeniBox { margin-top: 1rem; }
+
+
+        .kucuk-div {
+
+            width: 90px;
+            background-color: red;
+            height: 90px;
+            transition: 1s ease-in-out;
+        }
+
+        .kucuk-div:hover {
+
+            /* width: 50%; */
+            background-color: blue;
+            transform: scale(2.1);
+     
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+    <div class="card-container">
+
+        <div class="box">
+
+        <div class="image-container">
+
+            <img src="https://www.w3schools.com/w3images/jeans3.jpg" alt="asd">
+        </div>
+
+
+        <div class="text-container">
+
+            <h3>Tailored Jeans</h3>
+
+            <span>$40</span>
+
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+        </div>
+
+
+        <div class="button-container">
+
+            <button>ADD TO CARD</button>
+
+        </div>
+
+    </div>
+
+
+    <div class="yeniBox">
+
+        <div class="kucuk-div">
+
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>

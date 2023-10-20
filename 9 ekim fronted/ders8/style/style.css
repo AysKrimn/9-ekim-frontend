@@ -1,0 +1,101 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+ul {
+
+    list-style-type: none;
+}
+
+a {
+
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+
+.forwardRight {
+
+    margin-left: auto;
+}
+
+.solid {
+
+    width: 5px;
+    height: 20px;
+    background: white;
+}
+
+li.active {
+
+    background-color: palevioletred;
+}
+
+nav {
+    width: 100%;
+    background-color: lightblue;
+    color: white;
+}
+
+nav ul {
+
+    display: flex;
+    align-items: center;
+    /* min-height: 70px; */
+    width: 90%;
+    margin: auto;
+}
+
+nav ul li { padding: 20px; }
+
+
+footer {
+
+    color: white;
+    background-color: lightblue;
+    min-height: 180px;
+}
+
+
+footer ul {
+
+    border-right: 5px solid white;
+}
+/* site contianer burada başlar */
+
+.site-container {
+
+    min-height: 90vh;
+}
+.banner {
+
+
+    background-image: url('https://t3.ftcdn.net/jpg/02/71/77/56/360_F_271775672_yo8ZgraN2IHGbfqP2k0PsLjwvmatUNUJ.jpg');
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -100px;
+}
+
+
+
+.flex-container {
+
+    display: flex;
+    text-align: center;
+    height: 150px;
+    align-items: center;
+}
+
+
+.right, .left {
+
+    flex: 1;
+}
+
+/* burada biter */
