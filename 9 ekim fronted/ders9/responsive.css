@@ -1,0 +1,62 @@
+@media screen and (min-width: 1001px ) {
+    
+
+    .flex-container div {
+
+        background-color: green;
+    }
+
+}
+@media screen and (max-width: 1000px) {
+
+
+    .flex-container div {
+    
+    
+        width: 45%;
+        background-color: red;
+    }
+    
+    
+}
+
+
+/* 700 px ekranlara kadar */
+@media screen and (max-width: 700px) {
+
+
+.flex-container div {
+
+
+    width: 100%;
+    background-color: orange;
+    
+}
+
+
+.image-container img {
+
+    display: none;
+}
+
+
+}
+
+
+
+
+@media screen and (max-width: 430px) {
+
+
+    .flex-container div p {
+    
+        
+        font-size: 25px;
+        
+        
+    }
+    
+
+    
+    
+    }
