@@ -1,0 +1,86 @@
+$kutu_renk: rgb(6, 39, 148);
+$footer_bg: black;
+$childColor: white;
+
+
+$divWidth: 200px;
+$divHeight: 200px;
+
+
+
+div {
+
+    width: $divWidth;
+    height: $divHeight;
+}
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+// nesting yapısı
+nav {
+
+    background-color: $footer_bg;
+    color: $childColor;
+
+    ul {
+
+        display: flex;
+        list-style-type: none;
+        min-height: 50px;
+        align-items: center;
+
+        li {
+
+            padding: 8px;
+        }
+
+        li.ensag {
+
+            margin-right: auto;
+        }
+    }
+
+
+
+    a {
+
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+
+// mixin yapısı programlama dillerinde karşılığı = fonksiyon
+@mixin kutu_model($boxWidth:300px, $boxHeight: 300px, $arkaplanRenk: orange) {
+    width: $boxWidth;
+    height: $boxHeight;
+    background-color: $arkaplanRenk;
+    margin-bottom: 8px;
+
+}
+
+
+
+.box {
+
+    @include kutu_model($boxHeight: 600px)
+}
+
+.box-2 {
+
+    @include kutu_model($arkaplanRenk: blue);
+}
+
+footer {
+
+
+    background-color: $footer_bg;
+}
