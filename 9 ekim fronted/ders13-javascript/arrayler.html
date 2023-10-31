@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    // diziler herşeyi tutabilir
+
+    // diziler ineks tabanşı çalışır
+    const dizi = ["elma", "armut", "muz"]
+
+    // sondan bir veri çıkarır
+    dizi.pop()
+    // dizinin içersine gir
+    const ilkEleman = dizi[0] // elma
+    console.log(ilkEleman)
+
+
+    // diziye yeni bir eleman ekle
+    dizi.push("kiraz")
+    
+
+    // dizinin başına bir eleman ekle
+    dizi.unshift("kavun")
+
+
+    // ortaya bir eleman ekle
+    dizi.splice(2, 0, "kivi")
+
+    // spesifik olarak bir veri sil
+    dizi.splice(4, 1)
+
+    // arrayin uzunluğunu al
+    let uzunluk = dizi.length
+    console.log(dizi, "uzunlugu şise:", uzunluk)
+
+    // arrayi stringe çevir
+    let stringOlrak = dizi.join(",")
+
+ { baslik: "dünya düz mü?"}
+    // içeriyor mu?
+    const kazananlar = ["ali","veli", "ömer"]
+
+    // const veri = [{}, {}, {}]
+    console.log("Kazanmış mı?", kazananlar.includes("irem"))
+    console.log("ARRAYİN STRING HALI:", stringOlrak)
+
+
+
+    // bir insan obje oluştur ve bu objenin gonderiler adında bir keyi olsun ve bu key bir array olsun, arrayde 
+    // 3 tane gönderi obje olarak (key: baslık: string olarak) tutulsun
+    // tutulsun
+
+
+    const kisi = {
+
+        ad: "ömer",
+        cinsiyet: "erkek",
+        yas: 24,
+        meslek: "işsiz",
+        gonderiler: [ 
+
+            { baslik: "dünya düz mü?"}, 
+            { baslik: "csgo vs valorant"}, 
+            { baslik: "yapay zeka insanligi ele gecirir mi?"}
+        ]
+
+    }
+
+
+    console.log(kisi)
+
+    // kisinin adı
+    console.log("adi:", kisi.ad)
+    // kisinin 2. postu
+    console.log("2. postu:", kisi.gonderiler[1].baslik)
+    // kisnini mesleğinin ise yazılımcı olması
+    kisi.meslek = "yazilimci"
+    console.log("mesleği:", kisi.meslek)
+
+    // gönderilerden enson postu sil
+    kisi.gonderiler.pop()
+
+    console.log("Kisinin göndwerileri:", kisi.gonderiler)
+
+    </script>
+</body>
+</html>

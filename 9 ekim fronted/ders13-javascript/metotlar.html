@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<script>
+
+// . ile herşeye girersin
+// her veri türünün kendine özel metotları vardır (undefined ve null hariç.)
+
+let isim = "ömer"
+
+// ömer ismini büyl harfle yaz
+// metotlar çağırılması gerekir çağırmak için () kullanulır
+isim = isim.toUpperCase()
+
+console.log(isim)
+
+let cumle = "bugün kurumca  yapicaz biseyler genelde, kahvalti                   yapicaz"
+
+// özellikler (property) de paranteç açılmaz
+// metotlar (methods) parantez açılır
+// uzunluğunu al
+console.log("cumlenin uzunlugu:", cumle.length)
+// yer değitir
+let degistir = cumle.replaceAll("yapicaz", "yapacağız")
+console.log("replace:", degistir)
+
+let cumle_2 = "Merhaba herkese kotu-kelime lorem liosum dolor." // string
+
+// cumleyi arraye çevir
+let arrayOlarak = cumle_2.split(" ") // []
+
+arrayOlarak[2] = "***"
+console.log("arrat:", arrayOlarak)
+
+// arrayolaraki tekrar stringe çevir
+let stringHali = arrayOlarak.join(" ")
+
+console.log("clientin göreceği yazı:", stringHali)
+
+
+
+// split
+
+</script>
+
+</body>
+</html>
