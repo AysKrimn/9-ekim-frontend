@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h3>HTML , CSS, JS</h3>
+    <hr>
+
+
+
+    <script>
+
+        // yorm satiri
+        /*
+            birden fazla yoru msatiri
+
+            string  = " " , '' ve `` ile ifade edilen herşey string
+            number  = tırnak ile belirtilmeyen herşey number
+            ^ evrimleşir =  Infinity , -Infinity , NaN 
+            boolean =  true / false (0 ve 1)
+            object = { }
+            ^ evrimleşir = Array []
+            null = tanımlı ancak veri tutmuyor boş.
+            undefined = tanımsız
+            symbol = ()
+            bigInt = cok büyük sayilar
+        */
+
+        // atama operatörü = (atama yapar, günceller)
+
+        const kisi = {
+            
+            isim: "Ahmet",
+            soyad: "Çolak".toUpperCase(),
+            hobiler: ["yazilim", "uyumak"],
+            yas: 24,
+            bilgiler: {
+
+                ulke: "TR",
+                sehir: "istanbul",
+                mahalle: "lorem",
+                sokak: "lorem lipsum",
+                aile: {
+
+                    anne: {
+                        adı: "lorem"
+                    }
+
+                    // ve vs...
+                }
+
+            },
+
+            // ahmet nesinesine metotlar tanıma
+            dogum_tarih: function() {
+                
+                "use strict";
+                kisi.yas += 1
+                console.log(this.isim, this.yas, "yaşında.")
+            },
+
+            kisisel_bilgiler: function () {
+
+                const metin = `Ülke: ${kisi.bilgiler.ulke} Şehir: ${kisi.bilgiler.sehir} Mahalle: ${kisi.bilgiler.mahalle}`
+
+                // metini çıkart dışarı
+                return metin;
+
+            }
+
+        }
+
+        kisi.dogum_tarih()
+
+        const bilgisi = kisi.kisisel_bilgiler()
+        console.log("verileri:", bilgisi)
+        // ilgili verinin tipini sorgula
+        // typeof 
+
+        // hobilere oyun oynama ekle
+        kisi.hobiler.push("oyun oynamak")
+        const hobileri = kisi.hobiler.join(',')
+        console.log(hobileri)
+        console.log("orijinal:", typeof kisi.hobiler, "casting:", typeof hobileri)
+
+        // objeyi dondur
+        Object.freeze(kisi.isim)
+        const entries = Object.entries(kisi)
+        console.log("entries:", entries)
+        // objeye yeni veriler ekle
+        console.log(kisi.yas)
+        kisi.yas = 50
+        kisi.cinsiyet = "erkek"
+        console.log(kisi)
+        kisi.isim = "ömer"
+
+
+        const dizi = []
+        // bütün verileri tutabilir
+        // dizilerde bir veriye ulaşmak için indeks numarası kullanılır
+        // dizilerin indeksi 0 dan başlar
+
+        // diziye yeni eleman ekle
+        dizi.push("elma")
+        dizi.push("kiraz")
+        dizi.push("kavun")
+
+        // dizinin uzunlugunu yazdir
+        console.log("dizinin uzunlugu:", dizi.length)
+        // dizinin ilk elemanına ulaş
+        console.log("İlk Eleman:", dizi[0])
+
+    
+
+        // const kisi_2 = {
+
+        //     isim : "ömer",
+        //     soyad: "ocak",
+        //     kayitli: false
+        // }
+
+
+        // if (kisi_2.kayitli === false) {
+
+        //     alert("Kayıtlı değilsin.")
+        //     const kayit_olmak_isterse = confirm("Kayıt olmak ister misin?")
+
+        //     if (kayit_olmak_isterse) {
+
+        //             kisi_2.kayitli = true
+        //             alert("Kayıt oldunuz.")
+        //     }
+        // }
+
+
+
+        // const person = {
+
+        //     adı: "burak",
+        //     cinsiyet: "erkek",
+        //     yas: 35,
+        //     vip: false,
+        //     para: 90
+        // }
+
+
+        // if (person.yas <= 18) {
+
+        //     // vipse ve parası varsa
+        //     if (person.vip === true && person.para > 100) {
+
+        //         alert(`Hoşgeldin ${person.adı} bey`)
+        //         // tüm parasını al
+        //         person.para -= person.para
+        //     } else {
+
+        //         alert("Büyüde gel")
+        //     }
+       
+       
+        // } else {
+
+        //     if (person.para >= 100) {
+        //     // yetişkinleri karşıla ve onlardan 100 tl al
+        //     alert(`Merhaba hoşgeldiniz ${person.adı}`)
+        //     person.para -= 100;
+        //     } else {
+
+        //         alert("Para kazanda gel.")
+        //     }
+
+        // }
+        // console.log("kişi:", person)
+
+
+        // döngülerimiz
+
+
+        const users = [
+
+                { id: 1, name: "burak", cinsiyet: "erkek", yeni: false},
+                { id: 4, name: "irem", cinsiyet: "kadın", yeni: true},
+                { id: 2, name: "hasan", cinsiyet: "erkek", yeni: false},
+                { id: 3, name: "kenan", cinsiyet: "erkek", yeni:false},
+                { id: 5, name: "pınar", cinsiyet: "kadın", yeni: false}
+        ]
+
+        // genel döngüler for i , for of 
+        const sorgu = "tüm"
+
+        const filtrele = users.filter(function(user) {
+
+                return user.cinsiyet !== sorgu && user.yeni === false
+        })
+
+    
+        filtrele.forEach(function(user) {
+
+            console.log("forEach",user.name)
+        })
+
+        console.log("gelen veri:", filtrele)
+        // for (const user of users) {
+
+        //     // sorgu kadin ise, sadeec kadinlar, erkek ise sadece erkekler, tüm ise tüm personelleri yazdir.
+        //     const cinsiyet = user.cinsiyet
+
+        //     if (sorgu === cinsiyet) {
+        //         console.log("userr:", user)
+            
+        //     } else {
+
+        //         if (user.yeni === true) {
+        //             // döngüyü atla
+        //             continue;
+        //         }
+
+        //         console.log("tüm personeller:", user)
+
+        //     }
+
+        // }
+    
+        
+
+
+
+    
+    </script>
+
+
+</body>
+</html>

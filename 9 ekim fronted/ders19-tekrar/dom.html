@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #container.hidden {
+
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button onclick="ac(this)">Önizlemeyi gör</button>
+
+    <div id="container" class="hidden">
+
+            <p>container sayfasi</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit necessitatibus autem facilis.</p>
+    </div>
+
+<script>
+
+
+const users = [
+
+    { id: 23, name: "ali"}, 
+    { id: 12, name: "burak"},
+    { id: 42, name: "ceren"}
+]
+
+
+const ul = document.createElement("ul") // <ul> </ul>
+
+// ulu body'e gönder
+document.body.appendChild(ul)
+// döngüye sok usersi
+users.forEach(function(user) {
+
+    const li = document.createElement("li") // <li>  burak  </li>
+    const span = document.createElement('span') // <span> </span>
+    
+    span.innerText = "Öğeyi Sil"
+    span.style.float = "right";
+
+    // spana bir tıklanma olayi ver
+    span.onclick = function() {
+
+        const onayla = confirm(`${user.name} kullanıcısını silmeyi onaylıyor musun?`)
+
+        if (onayla) {
+
+            document.getElementById(user.id).remove()
+        }
+
+    }
+
+
+    li.id = user.id
+    li.title = `Bu userin adı ${user.name}`
+    li.innerText = user.name
+    li.onmouseenter = function (event) {
+
+        li.style.color = "red";
+        li.style.cursor = "pointer"
+    }
+
+    li.onmouseleave = function (event) {
+
+        li.style.color = "initial"
+    }
+
+    li.style.width = "30%"
+    // artık li'i gönder
+    ul.appendChild(li)
+
+    //spanı li içine at
+    li.appendChild(span)
+})
+
+
+
+
+// DOM (DOCUMENT OBJECT MODEL)
+// getElementById, querySelector, querySelectorAll
+// getElementById = id'e göre seçer, ilk eşleşeni göndürrü
+// querySelector = CSS kurallarına göre seçer, ilk eşleşeni döndürür
+// querySelectorAll = CSS kurallarına göre seçer, tüm eşleşenleri döndürür
+
+// HTMLLIElement = { onclick, class, id, title, diğer_tüm_html_elementleri} verebildiğimiz türdür.
+// HTML elementlerinde, remove, addEventListener, setAttribute gibi kendilerine özel metotları vardır.
+
+</script>
+
+
+<script>
+
+    function ac(btn) {
+
+        // divi yakala
+        const div = document.getElementById('container')
+        // gizliyse görünür, görünürse, gizli yap
+        div.classList.toggle('hidden')
+
+        if (btn.innerText === "Önizlemeyi gör") {
+
+            btn.innerText = "Önizlemeyi Gizle"
+        } else {
+
+            btn.innerText = "Önizlemeyi gör"
+        }
+    }
+</script>
+    
+</body>
+</html>
