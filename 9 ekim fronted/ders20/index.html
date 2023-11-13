@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+
+       body.dark {
+
+            background-color: black;
+            color: white;
+        }
+
+      body.dark *:not(button) {
+
+        color: inherit;
+      }
+
+
+    </style>
+</head>
+<body>
+    
+<button onclick="changeTheme()">Tema Değiştir</button>
+        
+<input id="titles" type="text" oninput="updateTitle(event)" placeholder="Sayfanın ismini değiştir">
+
+
+
+<button onclick="showImages()">Önizlemeleri Göster</button> <br>
+
+
+<div id="image-container">
+
+</div>
+
+<br>
+<button id="btn1">Geri</button>
+<button onclick="next()">İleri</button>
+<button onclick="randomImage()">Rastgele Seç</button>
+
+
+<div id="image-container-2">
+
+    <img src="" alt="singleImage">
+</div>
+
+
+<script src="./jaavascript.js"></script>
+
+</body>
+</html>
