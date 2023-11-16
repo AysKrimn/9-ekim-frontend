@@ -54,11 +54,48 @@ function handleInputChange(duzenleme_butonu) {
 
 }
 
-// sayfa tamamen yüklendiği zaman;
-window.onload = function() {
 
-    // high order functions
-    users.forEach(function(user) {
+// yeni user ekle
+function addNewUser() {
+
+    const ad = prompt("Personel Adı giriniz")
+    if (ad === null) return;
+
+    const soyad = prompt("Personelin Soyadı:")
+    if(soyad === null) return;
+
+    // users arrayine obje olarak gönder
+    const model = { id: generateRandomId(), name: ad, lastname: soyad }
+    // arraye gönder
+    users.push(model)
+
+    console.log("USER ADD:", users)
+    // domu güncelle
+    updateDOM()
+}
+
+// tüm verileri sil
+function clearTable() {
+
+    const onayla = confirm("Tüm veriler silinecek emin misiniz?") 
+
+    if (onayla) {
+
+        users.length = 0
+        console.log("AARRAY:", users)
+        updateDOM()
+    }
+
+}
+
+
+// updateDOM
+function updateDOM() {
+
+    // tbdoy'in içini boşalt
+    tbody.innerText = "";
+
+    users.forEach(function(user, index) {
 
         const tr = createHTMLElement("tr")
         const th = createHTMLElement('th', user.id)
@@ -128,6 +165,24 @@ window.onload = function() {
         duzenleBtn.className = "btn btn-warning me-3"
         silBtn.className = "btn btn-danger"
 
+        // silBtn işlev ver
+        silBtn.onclick = function() {
+
+                const onay = confirm(`${user.name} silinecek bu işlem geri alınamaz.`)
+
+                if (onay) {
+
+                    // original arraydan sil
+                    users.splice(index, 1)
+                    console.log("orijinal data:", users)
+
+                    // updateDOM'u çağır
+                    updateDOM()
+
+                }
+
+        }
+
         // tüm elemanları tr'e at
         tr.append(th)
         tr.append(ad)
@@ -140,5 +195,13 @@ window.onload = function() {
 
         tbody.append(tr)
     })
+}
+
+// sayfa tamamen yüklendiği zaman;
+window.onload = function() {
+
+    // high order functions
+    // anomim fonksiyon
+    updateDOM()
 
 }
