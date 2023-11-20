@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .button-container {
+
+            text-align: end;
+
+        }
+
+        .button-container button {
+
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        #products {
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-around;
+        }
+
+        .title {
+
+            text-align: center;
+        }
+        li {
+
+            list-style: none;
+        }
+
+
+        nav {
+
+            background-color: black;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav ul {
+
+            display: flex;
+            min-height: 40px;
+            align-items: center;
+        }
+
+        nav ul li {
+
+            padding: 1rem;
+        }
+
+
+        nav li.ensag {
+
+            margin-left: auto;
+        }
+        nav li button {
+
+            padding: 8px;
+            cursor: pointer;
+     
+        }
+
+
+        .sidebar {
+
+            width: 0;
+            background-color: black;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            transition: 0.5s;
+        }
+
+        .sidebar.active {
+
+            width: 15%;
+        }
+
+
+        .site-container {
+
+            transition: 0.5s;
+            margin-top: 2rem;
+        }
+        .site-container.active {
+
+            margin-left: 13rem;
+        }
+
+</style>
+</head>
+<body>
+    
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+
+                <a href="#">LOGO</a>
+            </li>
+
+            <li class="ensag">
+
+                <button id="sepetTrigger" onclick="openSepet()">Sepet</button>
+            </li>
+        </ul>
+
+
+    </nav>
+
+    <div class="sidebar">
+        
+    </div>
+
+<div class="site-container">
+
+    <ul id="products">
+
+
+    </ul>
+
+
+</div>
+<script>
+
+window.onload = async () => {
+    const ul = document.getElementById('products')
+    // aği isteği yap
+    const request = await fetch("./product.json")
+    const response = await request.json()
+
+    console.log("VERİİĞ:", response)
+
+    response.forEach(urun => {
+
+        ul.innerHTML += `
+        
+            <li>
+                <h3 class='title'>${urun.name}</h3>    
+
+                <div>
+                    <img src='${urun.banner}' alt='foto-${urun.id}'>    
+                </div>
+
+                <p>${urun.description}</p>
+
+                <div class='button-container'>
+                    <button>Sepete Ekle</button>
+                </div>
+         
+            </li>
+        `
+        
+    });
+}
+
+</script>    
+
+
+
+
+<script>
+// sepet aç kapa
+function openSepet() {
+
+    const siteContainer = document.querySelector('.site-container')
+    const sidebar = document.querySelector('.sidebar')
+    // bu elemeane active classi ver
+    sidebar.classList.toggle('active')
+    siteContainer.classList.toggle('active')
+}
+
+
+</script>
+</body>
+</html>

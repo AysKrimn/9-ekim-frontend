@@ -1,0 +1,40 @@
+[
+
+    {
+        "id": 23,
+        "name": "Nature",
+        "description": "lorem lipsum",
+        "banner": "./images/bisey.jpg"
+    },
+
+    {
+        "id": 24,
+        "name": "Train",
+        "description": "lorem lipsum safdsfds",
+        "banner": "./images/train.jpg"
+    },
+
+    {
+        "id": 242,
+        "name": "Cloud",
+        "description": "lorem lipsum safdsfds dsa",
+        "banner": "./images/cloud.jpg"
+    },
+
+    {
+        "id": 1231,
+        "name": "Manzara",
+        "description": "lorem lipsum safdsfds dsa",
+        "banner": "./images/manzara.jpg"
+    },
+
+    {
+        "id": 2422,
+        "name": "Sky",
+        "description": "lorem lipsum safdsfds dsaas",
+        "banner": "./images/sky.jpg"
+    }
+
+
+
+]
