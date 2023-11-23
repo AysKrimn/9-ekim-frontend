@@ -100,6 +100,39 @@
             margin-left: 13rem;
         }
 
+        #sepet-products li {
+
+            margin-top: 5rem;
+            color: white;
+        }
+
+        #sepet-products li img {
+
+            width: 100%;
+        }
+
+
+        .sidebar {
+
+            overflow: auto;
+        }
+
+        .sidebar-container {
+
+            text-align: center;
+        }
+        .sidebar-container input {
+
+            width: 65%;
+            padding: 8px;
+        }
+
+        .sidebar-container button {
+
+                cursor: pointer;
+                padding: 8px;
+        }
+
 </style>
 </head>
 <body>
@@ -125,6 +158,8 @@
     </nav>
 
     <div class="sidebar">
+
+        <ul id="sepet-products"></ul>
         
     </div>
 
@@ -137,56 +172,11 @@
 
 
 </div>
-<script>
-
-window.onload = async () => {
-    const ul = document.getElementById('products')
-    // aği isteği yap
-    const request = await fetch("./product.json")
-    const response = await request.json()
-
-    console.log("VERİİĞ:", response)
-
-    response.forEach(urun => {
-
-        ul.innerHTML += `
-        
-            <li>
-                <h3 class='title'>${urun.name}</h3>    
-
-                <div>
-                    <img src='${urun.banner}' alt='foto-${urun.id}'>    
-                </div>
-
-                <p>${urun.description}</p>
-
-                <div class='button-container'>
-                    <button>Sepete Ekle</button>
-                </div>
-         
-            </li>
-        `
-        
-    });
-}
-
-</script>    
 
 
+<script src="./local_api_scripts/structure.js"></script>
+<script src="./local_api_scripts/onload.js"></script>
+<script src="./local_api_scripts/sepet.js"></script>
 
-
-<script>
-// sepet aç kapa
-function openSepet() {
-
-    const siteContainer = document.querySelector('.site-container')
-    const sidebar = document.querySelector('.sidebar')
-    // bu elemeane active classi ver
-    sidebar.classList.toggle('active')
-    siteContainer.classList.toggle('active')
-}
-
-
-</script>
 </body>
 </html>
