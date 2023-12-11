@@ -1,0 +1,35 @@
+body {
+
+    overflow-x: hidden;
+}
+
+
+.card-container {
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.responsive-image {
+
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+#root {
+
+    transition: 0.5s;
+}
+
+#root.dark {
+
+    color: white;
+}
+
+
+.dark {
+
+    background-color: #212529;
+
+}
