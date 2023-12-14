@@ -1,0 +1,28 @@
+/* #siteNav {
+
+    background-color: black;
+}
+
+
+#siteNav *:not(.nav-item) { 
+
+    color: white;
+} */
+
+
+#siteNav a {
+
+    color: white;
+}
+
+#siteNav .dropdown a:not(#basic-nav-dropdown) { 
+
+    color: black;
+}
+
+a.active::before {
+
+    color: orange;
+    content: "> ";
+
+}
